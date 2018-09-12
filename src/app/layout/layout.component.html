@@ -1,0 +1,45 @@
+<div class="container" [class.container-is-mobile]="mobileQuery.matches">
+
+    <mat-toolbar color="primary" class="toolbar">
+
+      <button mat-icon-button (click)="sidenav.toggle()" fxHide.gt-xs><mat-icon>menu</mat-icon></button>
+      <span>My CRM</span>
+
+      <span class="spacer"></span>
+
+      <h3 *ngIf="authenticated" fxHide.xs>Welcome {{adalService.userInfo.profile.name}}</h3>
+      <span *ngIf="!authenticated" (click)="login()" class="padded-button">
+        <button mat-raised-button>Login</button>
+      </span>
+      <span *ngIf="authenticated" (click)="logout()" class="padded-button">
+        <button mat-raised-button>Logout</button>
+      </span>
+
+    </mat-toolbar>
+
+
+    <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+
+      <mat-sidenav #sidenav mode="side" [opened]="mobileQuery.matches ? 'false' : 'true'" [fixedInViewport]="mobileQuery.matches" fixedTopGap="56" class="leftNavContainer">
+        <!-- <div id="leftNavLogo" fxFlex fxLayoutAlign="center">
+            <img src="../assets/logo.png" height="64px" />
+        </div> -->
+
+        <mat-nav-list>
+          <a mat-list-item routerLink="dashboard">Dashboard</a>
+          <a mat-list-item routerLink="contacts">Contacts</a>
+          <a mat-list-item routerLink="companies">Companies</a>
+          <a mat-list-item routerLink="tasks">Tasks</a>
+          <a mat-list-item routerLink="opportunities">Opportunities</a>
+          <a mat-list-item routerLink="reports">Reports</a>
+          <a mat-list-item routerLink="help">Help</a>
+        </mat-nav-list>
+      </mat-sidenav>
+
+      <mat-sidenav-content class="content">
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+
+    </mat-sidenav-container>
+
+  </div>
