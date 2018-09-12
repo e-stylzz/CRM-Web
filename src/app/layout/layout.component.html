@@ -7,11 +7,11 @@
 
       <span class="spacer"></span>
 
-      <h3 *ngIf="authenticated" fxHide.xs>Welcome {{adalService.userInfo.profile.name}}</h3>
-      <span *ngIf="!authenticated" (click)="login()" class="padded-button">
+      <h3 *ngIf="isOnline()" fxHide.xs>Welcome {{profile.given_name}}</h3>
+      <span *ngIf="!isOnline()" (click)="login()" class="padded-button">
         <button mat-raised-button>Login</button>
       </span>
-      <span *ngIf="authenticated" (click)="logout()" class="padded-button">
+      <span *ngIf="isOnline()" (click)="logout()" class="padded-button">
         <button mat-raised-button>Logout</button>
       </span>
 
