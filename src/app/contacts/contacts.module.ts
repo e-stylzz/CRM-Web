@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { ContactsRoutingModule } from './contacts-routing.module';
 import { HomeComponent } from './home/home.component';
+import { MaterialModule } from '../shared/material.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    ContactsRoutingModule
+    ContactsRoutingModule,
+    MaterialModule
   ],
   declarations: [HomeComponent]
 })

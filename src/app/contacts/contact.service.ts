@@ -23,8 +23,8 @@ export class ContactService {
       );
   }
 
-  getAllContacts(): Observable<Contact> {
-    return this.http.get<Contact>(this.api)
+  getAllContacts(): Observable<Contact[]> {
+    return this.http.get<Contact[]>(this.api)
       .pipe(
         catchError(this._handleError)
       );
