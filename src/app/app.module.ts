@@ -9,6 +9,7 @@ import { MaterialModule } from './shared/material.module';
 import { LayoutComponent } from './layout/layout.component';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { ContactsModule } from './contacts/contacts.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ContactsModule } from './contacts/contacts.module';
     LayoutModule,
     MaterialModule,
     DashboardModule,
-    ContactsModule
+    ContactsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

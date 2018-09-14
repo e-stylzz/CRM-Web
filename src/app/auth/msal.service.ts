@@ -8,7 +8,6 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 })
 export class MsalService {
 
-  access_token: any;
   helper = new JwtHelperService();
 
   clientApplication = new Msal.UserAgentApplication(environment.auth.clientID, environment.auth.authority,
