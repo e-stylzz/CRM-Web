@@ -10,7 +10,7 @@ import { catchError } from 'rxjs/Operators';
 })
 export class ContactService {
 
-  private api = environment.base_api + 'contact';
+  private api = environment.base_api + 'contacts/';
 
   constructor(
     private http: HttpClient
